@@ -1,0 +1,31 @@
+@mixin width($width) {
+  @if $width == lg {
+    @media screen and (min-width: #{$lg-device}) {
+      @content;
+    }
+  }
+
+  @else if $width == mg {
+    @media screen and (max-width: #{$lg-device - 1}) and (min-width: #{$mg-device}) {
+      @content;
+    }
+  }
+
+  @else if $width == md {
+    @media screen and (max-width: #{$mg-device - 1}) and (min-width: #{$md-device}) {
+      @content;
+    }
+  }
+
+  @else if $width == sm {
+    @media screen and (max-width: #{$md-device - 1}) and (min-width: #{$sm-device}) {
+      @content;
+    }
+  }
+  
+  @else if $width == xs {
+    @media screen and (max-width: #{$sm-device - 1}) {
+      @content;
+    }
+  }
+}

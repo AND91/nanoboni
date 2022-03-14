@@ -1,0 +1,51 @@
+.button {
+  margin: 0 6px;
+  padding: 8px 24px;
+  font-size: 16px;
+  height: max-content;
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  transition: .2s;
+
+  &:nth-child(1) {
+    margin: 0 6px 0 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include width(xs) {
+    font-size: 99%;
+    padding: 6px 8px;
+  }
+}
+
+.b-white {
+  color: $pattern-gray;
+  background: white;
+  border: 1px solid $pattern-gray;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $light-green;
+    color: white;
+    outline: $pattern-gray;
+  }
+}
+
+.b-green {
+  color: white;
+  background: $light-green;
+  border: 1px solid $pattern-gray;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $dark-blue;
+    color: white;
+    outline: $pattern-gray;
+  }
+}

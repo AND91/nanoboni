@@ -1,0 +1,50 @@
+$xl-device: 1280px;
+$lg-device: 1200px;
+$mg-device: 992px;
+$md-device: 768px;
+$sm-device: 576px;
+$xs-device: 380px;
+
+@mixin panel-width($width) {
+  @if $width==lg {
+    @media screen and (max-width: #{$xl-device}) and (min-width: #{$lg-device}) {
+      @content;
+    }
+  }
+
+  @else if $width==mg {
+    @media screen and (max-width: #{$lg-device - 1}) and (min-width: #{$mg-device}) {
+      @content;
+    }
+  }
+
+  @else if $width==md {
+    @media screen and (max-width: #{$mg-device - 1}) and (min-width: #{$md-device}) {
+      @content;
+    }
+  }
+
+  @else if $width==sm {
+    @media screen and (max-width: #{$md-device - 1}) and (min-width: #{$sm-device}) {
+      @content;
+    }
+  }
+
+  @else if $width==xs {
+    @media screen and (max-width: #{$sm-device - 1}) {
+      @content;
+    }
+  }
+
+  @else if $width==custom-xs {
+    @media screen and (max-width: #{$sm-device - 1}) and (min-width: #{$xs-device}) {
+      @content;
+    }
+  }
+
+  @else if $width==xxs {
+    @media screen and (max-width: #{$xs-device - 1}) {
+      @content;
+    }
+  }
+}

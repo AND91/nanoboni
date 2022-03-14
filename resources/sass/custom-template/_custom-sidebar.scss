@@ -1,0 +1,117 @@
+.custom-sidebar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  // width: $sidebar-width;
+  width: 138px;
+  left: 0;
+  z-index: 1030;
+  border-right: 1px solid #ddd;
+  transition: 0.5s $transition-bezier;
+  background: $default-bg-color;
+  transform: translateX(0);
+  @include transition(0.5s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+
+  @media screen and (min-width: 992px) {
+    transform: translateX(0) !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    transform: translateX(-100%);
+  }
+
+  &-header {
+    height: 60px;
+    &-link {
+      color: inherit;
+
+      &_image {
+        width: 300px;
+        max-height: 64px;
+        max-width: 100%;
+        padding: 8px;
+        background: #000;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &-body {
+    &-wrapper {
+      height: calc(100vh - 80px);
+      z-index: 4;
+      overflow: hidden;
+      transition: 0.3s;
+      position: relative;
+
+      &-list {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        padding: 0;
+
+        &-item {
+          color: #fff;
+          display: block;
+          text-decoration: none;
+          position: relative;
+          text-transform: uppercase;
+          cursor: pointer;
+          font-size: 12px;
+          padding: 16px 0;
+          line-height: 24px;
+
+          &-link {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            padding-bottom: 8px;
+            transition: 0.3s;
+            text-decoration: none !important;
+
+            i {
+              color: $default-list-color;
+              transition: 0.2s;
+              font-size: 3em;
+            }
+
+            &-title {
+              margin: 0;
+              color: $default-list-color;
+              transition: 0.2s;
+              padding-top: 4px;
+              font-weight: 700;
+
+              &:hover {
+                color: $default-list-color-active;
+              }
+            }
+
+            &:hover {
+
+              i {
+                color: $default-list-color-active;
+              }
+            }
+          }
+
+          &.active {
+            left: 0;
+            border-left: 4px solid $default-green-color;
+            i {
+              color: $default-list-color-active;
+            }
+
+            &-title {
+              color: $default-list-color-active;
+            }
+          }
+        }
+      }
+    }
+  }
+}

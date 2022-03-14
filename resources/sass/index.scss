@@ -1,0 +1,12 @@
+@import "./variables";
+
+//parts
+@import "./parts/variables";
+@import "./parts/mixins";
+@import "./parts/typography";
+@import "./parts/default-styling";
+@import "./parts/components";
+
+@import "mixins";
+@import "catalog";
+@import "app";
